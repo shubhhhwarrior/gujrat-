@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Flight Tickets - Gujarat Tours & Travels</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Book flight tickets with Gujarat Tours & Travels. Best deals on domestic and international flights.">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Gujarat Tours & Travels</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="cab.html" class="nav-link">Cab</a>
+                </li>
+                <li class="nav-item">
+                    <a href="bus.html" class="nav-link">Bus</a>
+                </li>
+                <li class="nav-item">
+                    <a href="train.html" class="nav-link">Train</a>
+                </li>
+                <li class="nav-item active">
+                    <a href="flight.html" class="nav-link">Flight</a>
+                </li>
+                <li class="nav-item">
+                    <a href="holiday.html" class="nav-link">Holidays</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="booking-page">
+        <div class="booking-container">
+            <div class="booking-header">
+                <h1>✈️ Book Flight Tickets</h1>
+                <p>Best deals on domestic and international flights with premium service.</p>
+            </div>
+            
+            <form id="flight-booking-form" class="booking-form">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="from">From (Departure City) *</label>
+                    <input type="text" id="from" name="from" placeholder="Departure city" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="to">To (Destination City) *</label>
+                    <input type="text" id="to" name="to" placeholder="Destination city" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="date">Travel Date *</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="passengers">Number of Passengers *</label>
+                    <input type="number" id="passengers" name="passengers" placeholder="Number of passengers" min="1" max="9" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="class">Class *</label>
+                    <select id="class" name="class" required>
+                        <option value="">Select class</option>
+                        <option value="Economy">Economy</option>
+                        <option value="Business">Business</option>
+                        <option value="First">First</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Book Flight Tickets</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Gujarat Tours & Travels</h3>
+                <p>Your trusted travel companion for all booking needs. Making travel simple and enjoyable since 2010.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="cab.html">Cab Booking</a></li>
+                    <li><a href="bus.html">Bus Tickets</a></li>
+                    <li><a href="train.html">Train Tickets</a></li>
+                    <li><a href="flight.html">Flight Tickets</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <!-- <p>📧 info@gujarattravels.com</p> -->
+                <p>📞 +91 8460256546</p>
+                <p>📍 Surat, Gujarat, India</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Gujarat Tours & Travels. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
