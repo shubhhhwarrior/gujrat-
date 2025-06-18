@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Bus Tickets - TravelEase</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>TravelEase</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="cab.html" class="nav-link">Cab</a>
+                </li>
+                <li class="nav-item active">
+                    <a href="bus.html" class="nav-link">Bus</a>
+                </li>
+                <li class="nav-item">
+                    <a href="train.html" class="nav-link">Train</a>
+                </li>
+                <li class="nav-item">
+                    <a href="flight.html" class="nav-link">Flight</a>
+                </li>
+                <li class="nav-item">
+                    <a href="holiday.html" class="nav-link">Holidays</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="booking-page">
+        <div class="booking-container">
+            <div class="booking-header">
+                <h1>🚌 Book Bus Tickets</h1>
+                <p>Affordable bus tickets for intercity and intracity travel</p>
+            </div>
+            
+            <form id="bus-booking-form" class="booking-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="from">From</label>
+                    <input type="text" id="from" name="from" placeholder="Departure city" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="to">To</label>
+                    <input type="text" id="to" name="to" placeholder="Destination city" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="date">Travel Date</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="passengers">Number of Passengers</label>
+                    <input type="number" id="passengers" name="passengers" placeholder="Number of passengers" min="1" max="10" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="bus-type">Bus Type</label>
+                    <select id="bus-type" name="bus-type">
+                        <option value="">Select bus type</option>
+                        <option value="ac-sleeper">AC Sleeper</option>
+                        <option value="non-ac-sleeper">Non-AC Sleeper</option>
+                        <option value="ac-seater">AC Seater</option>
+                        <option value="non-ac-seater">Non-AC Seater</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Book Bus Tickets</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>TravelEase</h3>
+                <p>Your trusted travel companion for all booking needs.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="cab.html">Cab Booking</a></li>
+                    <li><a href="bus.html">Bus Tickets</a></li>
+                    <li><a href="train.html">Train Tickets</a></li>
+                    <li><a href="flight.html">Flight Tickets</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>📧 info@travelease.com</p>
+                <p>📞 +1 234 567 8900</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 TravelEase. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
