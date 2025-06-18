@@ -123,7 +123,8 @@ p {
 .nav-logo h2 {
     color: white;
     font-size: var(--font-size-xl);
-    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
     text-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
@@ -672,21 +673,29 @@ footer {
     }
     
     .nav-menu {
-        position: fixed;
-        left: -100%;
+        position: absolute;
+        left: 0;
         top: 100%;
         flex-direction: column;
         background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
         width: 100%;
         text-align: center;
-        transition: left var(--transition-normal);
+        transition: all var(--transition-normal);
         box-shadow: var(--shadow-xl);
-        padding: var(--space-8) 0;
+        padding: 0;
         gap: var(--space-4);
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 999;
     }
     
     .nav-menu.active {
-        left: 0;
+        max-height: 400px;
+        padding: var(--space-8) 0;
+        opacity: 1;
+        visibility: visible;
     }
     
     .nav-link {

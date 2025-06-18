@@ -1,53 +1,5 @@
     // script.js - Gujarat Tours & Travels - Mobile-First Responsive Website
 
-    // Mobile Navigation Toggle
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
-
-    if (hamburger && navMenu) {
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
-            
-            // Animate hamburger bars
-            const bars = hamburger.querySelectorAll('.bar');
-            if (hamburger.classList.contains('active')) {
-                bars[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-                bars[1].style.opacity = '0';
-                bars[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
-            } else {
-                bars[0].style.transform = 'none';
-                bars[1].style.opacity = '1';
-                bars[2].style.transform = 'none';
-            }
-        });
-
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-            
-            // Reset hamburger bars
-            const bars = hamburger.querySelectorAll('.bar');
-            bars[0].style.transform = 'none';
-            bars[1].style.opacity = '1';
-            bars[2].style.transform = 'none';
-        }));
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-                
-                const bars = hamburger.querySelectorAll('.bar');
-                bars[0].style.transform = 'none';
-                bars[1].style.opacity = '1';
-                bars[2].style.transform = 'none';
-            }
-        });
-    }
-
     // WhatsApp redirection function with specific number
     function openWhatsAppWithData(message) {
         console.log('Opening WhatsApp with message:', message);
@@ -348,6 +300,74 @@
     // Initialize all functions when DOM is loaded
     document.addEventListener('DOMContentLoaded', function() {
         console.log('DOM loaded, initializing forms...');
+        
+        // Mobile Navigation Toggle - Moved inside DOMContentLoaded
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent event bubbling
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+                
+                // Animate hamburger bars
+                const bars = hamburger.querySelectorAll('.bar');
+                if (hamburger.classList.contains('active')) {
+                    bars[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                    bars[1].style.opacity = '0';
+                    bars[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+                } else {
+                    bars[0].style.transform = 'none';
+                    bars[1].style.opacity = '1';
+                    bars[2].style.transform = 'none';
+                }
+            });
+
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                
+                // Reset hamburger bars
+                const bars = hamburger.querySelectorAll('.bar');
+                bars[0].style.transform = 'none';
+                bars[1].style.opacity = '1';
+                bars[2].style.transform = 'none';
+            }));
+
+            // Close mobile menu when clicking outside - with improved logic
+            document.addEventListener('click', (e) => {
+                // Only close if menu is active and click is outside both hamburger and nav menu
+                if (navMenu.classList.contains('active') && 
+                    !hamburger.contains(e.target) && 
+                    !navMenu.contains(e.target)) {
+                    
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    
+                    // Reset hamburger bars
+                    const bars = hamburger.querySelectorAll('.bar');
+                    bars[0].style.transform = 'none';
+                    bars[1].style.opacity = '1';
+                    bars[2].style.transform = 'none';
+                }
+            });
+
+            // Prevent clicks inside nav menu from closing it
+            navMenu.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+        }
+
+        // Make site title clickable to redirect to homepage
+        const siteTitle = document.querySelector('.nav-logo h2');
+        if (siteTitle) {
+            siteTitle.style.cursor = 'pointer';
+            siteTitle.addEventListener('click', function() {
+                window.location.href = 'index.html';
+            });
+        }
         
         enhanceFormValidation();
         initSmoothScrolling();
